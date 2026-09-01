@@ -1,0 +1,218 @@
+
+/* ==========================================================
+   ВСЕ ФОТО В ПАСПОРТЕ КЛИКАБЕЛЬНЫ
+   ========================================================== */
+
+#sampleModal img.honey-clickable-image {
+    cursor: zoom-in !important;
+    transition:
+        transform .22s ease,
+        filter .22s ease;
+}
+
+#sampleModal img.honey-clickable-image:hover {
+    transform: scale(1.015);
+    filter: brightness(.96);
+}
+
+
+/* ==========================================================
+   ПОЛНОЭКРАННЫЙ ПРОСМОТР
+   ========================================================== */
+
+.universal-honey-viewer {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+}
+
+.universal-honey-viewer.open {
+    display: flex;
+}
+
+
+.universal-honey-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(24, 17, 11, .93);
+
+    backdrop-filter:
+        blur(9px);
+}
+
+
+.universal-honey-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 95vw;
+    max-height: 94vh;
+}
+
+
+.universal-honey-image {
+    display: block;
+
+    max-width: 92vw;
+    max-height: 82vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    background: #211a14;
+
+    box-shadow:
+        0 25px 90px
+        rgba(0, 0, 0, .55);
+}
+
+
+.universal-honey-caption {
+    max-width: 850px;
+
+    margin-top: 15px;
+
+    color: rgba(255, 248, 231, .82);
+
+    font-size: 13px;
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+.universal-honey-close {
+    position: absolute;
+
+    right: -18px;
+    top: -18px;
+
+    z-index: 5;
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(255,255,255,.28);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background:
+        rgba(33,26,20,.9);
+
+    color: white;
+
+    font-size: 29px;
+
+    line-height: 1;
+}
+
+
+.universal-honey-close:hover {
+    background: var(--honey);
+    color: var(--brown);
+}
+
+
+body.honey-photo-viewer-open {
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   МИКРОФОТОГРАФИИ
+   ========================================================== */
+
+#sampleModal .micro-card {
+    position: relative;
+}
+
+#sampleModal .micro-card img {
+    cursor: zoom-in !important;
+}
+
+#sampleModal .micro-card::after {
+    content: "⤢";
+
+    position: absolute;
+
+    right: 12px;
+    top: 12px;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(34,25,17,.78);
+
+    color: white;
+
+    font-size: 15px;
+
+    opacity: .9;
+}
+
+
+/* ==========================================================
+   ФОТОГРАФИИ БАНКИ / ОБРАЗЦА
+   ========================================================== */
+
+#sampleModal .passport-gallery-image-button {
+    cursor: zoom-in !important;
+}
+
+#sampleModal .passport-gallery-image-button img {
+    pointer-events: auto !important;
+}
+
+
+@media (max-width: 600px) {
+
+    .universal-honey-viewer {
+        padding: 15px;
+    }
+
+    .universal-honey-image {
+        max-width: 96vw;
+        max-height: 80vh;
+    }
+
+    .universal-honey-close {
+        right: 0;
+        top: -52px;
+    }
+
+}

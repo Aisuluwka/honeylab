@@ -1,0 +1,1046 @@
+
+/* ==========================================================
+   SCIENTIFIC STATUS
+   ========================================================== */
+
+.scientific-status-section {
+    padding-top: 35px;
+    padding-bottom: 45px;
+}
+
+.scientific-status-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 32px;
+
+    padding: 38px;
+
+    border: 1px solid
+        rgba(194, 142, 43, .22);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0,
+            #fffdf9
+        );
+}
+
+.scientific-status-icon {
+    width: 82px;
+    height: 72px;
+
+    display: grid;
+    place-items: center;
+
+    clip-path:
+        polygon(
+            25% 6.7%,
+            75% 6.7%,
+            100% 50%,
+            75% 93.3%,
+            25% 93.3%,
+            0% 50%
+        );
+
+    background: #f4c75a;
+
+    font-size: 31px;
+}
+
+.scientific-status-label {
+    color: #a96c10;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .16em;
+}
+
+.scientific-status-copy h2 {
+    margin: 7px 0 15px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px, 3vw, 43px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+}
+
+.scientific-status-copy p {
+    max-width: 830px;
+
+    margin: 8px 0;
+
+    color: #6f6253;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.scientific-status-copy
+.scientific-status-lead {
+    color: #40372d;
+
+    font-size: 15px;
+}
+
+.confidence-flow {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto
+        1fr auto
+        1fr auto
+        1fr;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 28px;
+}
+
+.confidence-step {
+    min-height: 120px;
+
+    padding: 18px;
+
+    border-radius: 17px;
+
+    background: white;
+
+    border:
+        1px solid
+        rgba(202, 154, 59, .23);
+}
+
+.confidence-step span {
+    color: #d79c27;
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.confidence-step strong {
+    display: block;
+
+    margin: 7px 0 6px;
+
+    color: #35291e;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+.confidence-step small {
+    color: #817364;
+
+    line-height: 1.4;
+}
+
+.confidence-arrow {
+    color: #d7a139;
+
+    font-size: 23px;
+}
+
+
+/* ==========================================================
+   DEVELOPER
+   ========================================================== */
+
+.developer-section {
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+
+.developer-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 350px)
+        1fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    padding: 47px;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 14% 20%,
+            rgba(246, 196, 83, .14),
+            transparent 27%
+        ),
+        #2d2118;
+
+    color: #fff8e7;
+}
+
+.developer-photo-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.developer-photo-frame {
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 310px;
+
+    aspect-ratio: 4 / 5;
+
+    border-radius: 28px;
+
+    background: #e4bd5c;
+
+    box-shadow:
+        0 24px 60px
+        rgba(0,0,0,.25);
+}
+
+.developer-photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.developer-online {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+    color:
+        rgba(255,248,231,.65);
+
+    font-size: 10px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+.developer-online span {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #65c873;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(101,200,115,.12);
+}
+
+.developer-kicker {
+    color: #f4c75a;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .16em;
+}
+
+.developer-content h2 {
+    margin: 7px 0 2px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(43px, 5vw, 67px);
+
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+.developer-role {
+    margin: 7px 0 23px !important;
+
+    color: #e8b944 !important;
+
+    font-weight: 700;
+}
+
+.developer-content p {
+    max-width: 720px;
+
+    color:
+        rgba(255,248,231,.7);
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.developer-description {
+    color:
+        rgba(255,248,231,.88)
+        !important;
+
+    font-size: 16px !important;
+}
+
+.developer-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.developer-tags span {
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        rgba(246,196,83,.23);
+
+    border-radius: 999px;
+
+    background:
+        rgba(246,196,83,.07);
+
+    color: #f1d993;
+
+    font-size: 10px;
+}
+
+.ask-ariadna-profile-button {
+    margin-top: 25px;
+
+    padding: 13px 18px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background: #f2c552;
+
+    color: #302217;
+
+    cursor: pointer;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   CHAT LAUNCHER
+   ========================================================== */
+
+.ariadna-chat {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 100000;
+}
+
+.ariadna-chat-launcher {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 250px;
+
+    padding: 10px 13px;
+
+    border: 1px solid
+        rgba(209, 154, 45, .25);
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 251, 241, .97);
+
+    box-shadow:
+        0 15px 50px
+        rgba(61, 41, 19, .18);
+
+    backdrop-filter:
+        blur(12px);
+
+    text-align: left;
+}
+
+.ariadna-chat-launcher.hidden {
+    display: none;
+}
+
+.launcher-avatar {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+}
+
+.launcher-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.launcher-online {
+    position: absolute;
+
+    right: 0;
+    bottom: 1px;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    background: #58bd6a;
+}
+
+.launcher-copy {
+    flex: 1;
+}
+
+.launcher-copy strong {
+    display: block;
+
+    color: #37291d;
+
+    font-size: 13px;
+}
+
+.launcher-copy span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #8b7d6c;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .06em;
+}
+
+.launcher-bubble {
+    font-size: 20px;
+}
+
+
+/* ==========================================================
+   CHAT PANEL
+   ========================================================== */
+
+.ariadna-chat-panel {
+    display: none;
+
+    width: min(430px, calc(100vw - 30px));
+    height: min(720px, calc(100vh - 45px));
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(198,146,42,.24);
+
+    border-radius: 24px;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 28px 100px
+        rgba(49,34,18,.3);
+}
+
+.ariadna-chat-panel.open {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.ariadna-chat-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #312319,
+            #48321f
+        );
+
+    color: #fff8e7;
+}
+
+.chat-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.chat-avatar {
+    position: relative;
+
+    width: 46px;
+    height: 46px;
+}
+
+.chat-avatar img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.chat-avatar span {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 10px;
+    height: 10px;
+
+    border: 2px solid #37271b;
+
+    border-radius: 50%;
+
+    background: #63c66e;
+}
+
+.chat-profile strong {
+    display: block;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+.chat-profile small {
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        rgba(255,248,231,.55);
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+.ariadna-chat-close {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 0;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 22px;
+}
+
+.ariadna-chat-body {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 18px;
+}
+
+.chat-message {
+    display: flex;
+
+    gap: 10px;
+}
+
+.chat-message img {
+    width: 35px;
+    height: 35px;
+
+    flex: 0 0 35px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.chat-message > div {
+    padding: 12px 14px;
+
+    border-radius:
+        5px 17px 17px 17px;
+
+    background: #f8efd8;
+
+    color: #4b3e31;
+}
+
+.chat-message strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #a16c15;
+
+    font-size: 10px;
+}
+
+.chat-message p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.62;
+}
+
+.chat-help-title {
+    margin: 21px 0 10px;
+
+    color: #8b7c6c;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+.ariadna-question-groups {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-bottom: 12px;
+}
+
+.chat-group-button {
+    padding: 7px 9px;
+
+    border:
+        1px solid #dfd0aa;
+
+    border-radius: 999px;
+
+    background: white;
+
+    color: #756653;
+
+    cursor: pointer;
+
+    font-size: 9px;
+}
+
+.chat-group-button.active {
+    border-color: #e0ab37;
+
+    background: #f3c85c;
+
+    color: #3b2b1c;
+
+    font-weight: 800;
+}
+
+.ariadna-question-list {
+    display: grid;
+
+    gap: 6px;
+}
+
+.ariadna-question-button {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border:
+        1px solid #eee3ca;
+
+    border-radius: 11px;
+
+    background: white;
+
+    color: #493d32;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 11px;
+}
+
+.ariadna-question-button:hover {
+    border-color: #deb24f;
+
+    background: #fff9ea;
+}
+
+.ariadna-question-button
+span:last-child {
+    color: #c68b24;
+
+    font-size: 15px;
+}
+
+.ariadna-answer-area {
+    margin-top: 17px;
+}
+
+.chat-selected-question {
+    max-width: 82%;
+
+    margin:
+        0 0 10px auto;
+
+    padding: 10px 12px;
+
+    border-radius:
+        15px 5px 15px 15px;
+
+    background: #33251a;
+
+    color: #fff8e7;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.answer-message {
+    margin-bottom: 12px;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 850px) {
+
+    .scientific-status-card {
+        grid-template-columns: 1fr;
+    }
+
+    .confidence-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .confidence-arrow {
+        transform: rotate(90deg);
+
+        text-align: center;
+    }
+
+    .developer-card {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 30px;
+    }
+
+    .developer-photo-column {
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .ariadna-chat {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .ariadna-chat-launcher {
+        min-width: auto;
+    }
+
+    .launcher-copy {
+        display: none;
+    }
+
+    .ariadna-chat-panel {
+        width:
+            calc(100vw - 24px);
+
+        height:
+            calc(100vh - 24px);
+    }
+
+}
+
+
+/* ==========================================================
+   HONEYLAB — CHAT CONVERSATION
+   ========================================================== */
+
+.ariadna-conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    margin-top: 18px;
+    padding-bottom: 10px;
+}
+
+
+/* сообщение пользователя */
+
+.chat-user-message {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+}
+
+.chat-user-message > div {
+    max-width: 82%;
+
+    padding: 11px 14px;
+
+    border-radius:
+        17px 5px 17px 17px;
+
+    background:
+        #33251a;
+
+    color:
+        #fff8e7;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    box-shadow:
+        0 5px 15px
+        rgba(43, 29, 16, .08);
+}
+
+
+/* ==========================================================
+   ARIADNA TYPING
+   ========================================================== */
+
+.ariadna-typing-message {
+    align-items: flex-end;
+
+    animation:
+        ariadnaMessageAppear
+        .22s ease both;
+}
+
+
+.ariadna-typing-message
+.typing-bubble {
+
+    min-width: 118px;
+
+    padding:
+        10px 14px 11px;
+
+    border-radius:
+        5px 17px 17px 17px;
+
+    background:
+        #f8efd8;
+}
+
+
+.ariadna-typing-message
+.typing-bubble strong {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        #9c7f56;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing:
+        .04em;
+}
+
+
+.typing-dots {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    height: 12px;
+}
+
+
+.typing-dots span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #b58b42;
+
+    animation:
+        ariadnaTypingDot
+        1.15s infinite ease-in-out;
+}
+
+
+.typing-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: .16s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: .32s;
+}
+
+
+@keyframes ariadnaTypingDot {
+
+    0%,
+    60%,
+    100% {
+        transform:
+            translateY(0);
+
+        opacity: .38;
+    }
+
+    30% {
+        transform:
+            translateY(-5px);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes ariadnaMessageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* появление ответа */
+
+.answer-message {
+    animation:
+        ariadnaMessageAppear
+        .28s ease both;
+}
+
+
+/* аватар в сообщении */
+
+.ariadna-typing-message img,
+.answer-message img {
+
+    width: 35px;
+    height: 35px;
+
+    flex:
+        0 0 35px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}

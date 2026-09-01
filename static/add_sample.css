@@ -1,0 +1,596 @@
+
+/* ==========================================================
+   HONEYLAB — ADD SAMPLE
+   ========================================================== */
+
+.add-sample-floating-button {
+    position: fixed;
+
+    left: 25px;
+    bottom: 25px;
+
+    z-index: 90000;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 13px 18px;
+
+    border: 0;
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    background: #f2c552;
+    color: #332419;
+
+    box-shadow:
+        0 14px 40px
+        rgba(75, 50, 21, .2);
+
+    font-weight: 900;
+}
+
+.add-sample-floating-button span {
+    font-size: 20px;
+}
+
+
+.add-sample-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 200000;
+}
+
+.add-sample-modal.open {
+    display: block;
+}
+
+
+.add-sample-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(30, 21, 14, .78);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+.add-sample-dialog {
+    position: absolute;
+
+    top: 3vh;
+    bottom: 3vh;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(940px, calc(100vw - 30px));
+
+    overflow-y: auto;
+
+    border-radius: 27px;
+
+    background: #fffdf8;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.35);
+}
+
+
+.add-sample-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 27px 32px;
+
+    border-bottom:
+        1px solid #eadfca;
+
+    background:
+        rgba(255,253,248,.97);
+
+    backdrop-filter:
+        blur(14px);
+}
+
+
+.add-sample-kicker {
+    color: #ae7417;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .15em;
+}
+
+
+.add-sample-header h2 {
+    margin: 5px 0 4px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+}
+
+
+.add-sample-header p {
+    margin: 0;
+
+    color: #887866;
+
+    font-size: 11px;
+}
+
+
+.add-sample-close {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border:
+        1px solid #e7dac2;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #49392a;
+
+    font-size: 25px;
+}
+
+
+.add-sample-form {
+    padding: 0 32px 35px;
+}
+
+
+.sample-form-section {
+    padding: 32px 0;
+
+    border-bottom:
+        1px solid #eee4d2;
+}
+
+
+.sample-form-section-title {
+    display: flex;
+
+    gap: 14px;
+
+    margin-bottom: 21px;
+}
+
+
+.sample-form-section-title > span {
+    width: 43px;
+    height: 38px;
+
+    flex: 0 0 43px;
+
+    display: grid;
+    place-items: center;
+
+    background: #f3c75b;
+
+    clip-path:
+        polygon(
+            25% 6.7%,
+            75% 6.7%,
+            100% 50%,
+            75% 93.3%,
+            25% 93.3%,
+            0% 50%
+        );
+
+    color: #3a2919;
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+
+.sample-form-section-title h3 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    font-weight: 500;
+}
+
+
+.sample-form-section-title p {
+    margin: 3px 0 0;
+
+    color: #978776;
+
+    font-size: 10px;
+}
+
+
+.sample-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.sample-form-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.sample-form-field > span {
+    color: #675849;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.sample-form-field input,
+.sample-form-field textarea,
+.sample-form-field select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid #e3d7c0;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: white;
+
+    color: #3f3429;
+
+    font: inherit;
+
+    font-size: 12px;
+}
+
+
+.sample-form-field textarea {
+    resize: vertical;
+}
+
+
+.sample-form-field input:focus,
+.sample-form-field textarea:focus,
+.sample-form-field select:focus {
+    border-color: #d7a337;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(230,177,62,.1);
+}
+
+
+.sample-form-wide {
+    grid-column: 1 / -1;
+}
+
+
+.sample-form-magnification {
+    max-width: 260px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================================
+   UPLOAD
+   ========================================================== */
+
+.honey-upload-zone {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 175px;
+
+    padding: 22px;
+
+    border:
+        2px dashed #dfc27b;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff9e8,
+            #fffdf8
+        );
+
+    text-align: center;
+
+    transition:
+        .2s ease;
+}
+
+
+.honey-upload-zone:hover {
+    border-color: #d3a02e;
+
+    background: #fff7dc;
+}
+
+
+.honey-upload-zone input {
+    display: none;
+}
+
+
+.upload-zone-icon {
+    margin-bottom: 9px;
+
+    font-size: 34px;
+}
+
+
+.honey-upload-zone strong {
+    color: #423327;
+
+    font-size: 13px;
+}
+
+
+.honey-upload-zone span {
+    margin-top: 5px;
+
+    color: #978570;
+
+    font-size: 10px;
+}
+
+
+.upload-preview-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(120px, 1fr)
+        );
+
+    gap: 9px;
+
+    margin-top: 13px;
+}
+
+
+.upload-preview-card {
+    position: relative;
+
+    overflow: hidden;
+
+    height: 125px;
+
+    border-radius: 12px;
+
+    background: #eee0bf;
+}
+
+
+.upload-preview-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+.upload-preview-card span {
+    position: absolute;
+
+    right: 7px;
+    bottom: 7px;
+
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(39,29,20,.8);
+
+    color: white;
+
+    font-size: 9px;
+}
+
+
+/* ==========================================================
+   SCIENCE NOTE
+   ========================================================== */
+
+.scientific-form-note {
+    margin-bottom: 17px;
+
+    padding: 15px 17px;
+
+    border-left:
+        4px solid #e0aa34;
+
+    border-radius:
+        0 12px 12px 0;
+
+    background: #fff5d9;
+
+    color: #74624d;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.scientific-form-note strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #4b3a27;
+}
+
+
+/* ==========================================================
+   ACTIONS
+   ========================================================== */
+
+.add-sample-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 25px;
+}
+
+
+.add-sample-cancel,
+.add-sample-save {
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+
+.add-sample-cancel {
+    border:
+        1px solid #ded2bb;
+
+    background: white;
+
+    color: #67594a;
+}
+
+
+.add-sample-save {
+    border: 0;
+
+    background: #33251a;
+
+    color: #fff8e7;
+}
+
+
+.add-sample-save:disabled {
+    opacity: .6;
+
+    cursor: wait;
+}
+
+
+.add-sample-message {
+    margin-top: 20px;
+
+    padding: 0;
+
+    font-size: 12px;
+}
+
+
+.add-sample-message.success {
+    padding: 13px 15px;
+
+    border-radius: 11px;
+
+    background: #edf8e9;
+
+    color: #3b7538;
+}
+
+
+.add-sample-message.error {
+    padding: 13px 15px;
+
+    border-radius: 11px;
+
+    background: #fff0ed;
+
+    color: #a24234;
+}
+
+
+body.sample-form-open {
+    overflow: hidden;
+}
+
+
+@media (max-width: 700px) {
+
+    .sample-form-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .sample-form-wide {
+        grid-column: auto;
+    }
+
+    .add-sample-header,
+    .add-sample-form {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .add-sample-floating-button {
+        left: 12px;
+        bottom: 12px;
+    }
+}

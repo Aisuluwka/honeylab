@@ -1,0 +1,280 @@
+
+.honey-card-actions {
+    display: flex;
+
+    gap: 8px;
+
+    margin:
+        14px 0 9px;
+}
+
+.honey-edit-btn,
+.honey-delete-btn {
+    padding:
+        8px 10px;
+
+    border-radius:
+        9px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.honey-edit-btn {
+    border:
+        1px solid #d9b760;
+
+    background:
+        #fff8df;
+
+    color:
+        #6d501d;
+}
+
+.honey-delete-btn {
+    border:
+        1px solid #e0b6aa;
+
+    background:
+        #fff1ed;
+
+    color:
+        #9c4938;
+}
+
+
+.simple-honey-edit-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 260000;
+}
+
+.simple-honey-edit-modal.open {
+    display: block;
+}
+
+.simple-honey-edit-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(30,21,14,.78);
+
+    backdrop-filter:
+        blur(7px);
+}
+
+.simple-honey-edit-dialog {
+    position: absolute;
+
+    top: 4vh;
+    bottom: 4vh;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        min(
+            760px,
+            calc(100vw - 30px)
+        );
+
+    overflow-y: auto;
+
+    border-radius:
+        22px;
+
+    background:
+        #fffdf8;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.35);
+}
+
+.simple-honey-edit-header {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        24px 27px;
+
+    border-bottom:
+        1px solid #eadfca;
+}
+
+.simple-honey-edit-header span {
+    color: #af7618;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: .12em;
+}
+
+.simple-honey-edit-header h2 {
+    margin:
+        5px 0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        28px;
+
+    font-weight: 500;
+}
+
+.simple-honey-edit-header p {
+    margin: 0;
+
+    color: #8e7d6b;
+
+    font-size: 10px;
+}
+
+.simple-honey-edit-header button {
+    width: 40px;
+    height: 40px;
+
+    border:
+        1px solid #ded2bd;
+
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 23px;
+}
+
+.simple-honey-edit-dialog form {
+    padding:
+        25px 27px 30px;
+}
+
+.simple-honey-edit-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 13px;
+}
+
+.simple-honey-edit-grid label {
+    display: flex;
+
+    flex-direction:
+        column;
+
+    gap: 6px;
+}
+
+.simple-honey-edit-grid label.wide {
+    grid-column:
+        1 / -1;
+}
+
+.simple-honey-edit-grid label span {
+    color: #685847;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.simple-honey-edit-grid input,
+.simple-honey-edit-grid textarea {
+    box-sizing:
+        border-box;
+
+    width: 100%;
+
+    padding:
+        11px 12px;
+
+    border:
+        1px solid #dfd3be;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font: inherit;
+
+    font-size: 11px;
+}
+
+.simple-honey-edit-actions {
+    display: flex;
+
+    justify-content:
+        flex-end;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+.simple-honey-edit-actions button {
+    padding:
+        11px 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 800;
+}
+
+.simple-honey-edit-actions button:last-child {
+    border: 0;
+
+    background: #34261b;
+
+    color: #fff8e7;
+}
+
+.simple-honey-edit-message {
+    margin-top: 15px;
+
+    font-size: 11px;
+}
+
+.simple-honey-edit-message.success {
+    color: #3d7b3b;
+}
+
+.simple-honey-edit-message.error {
+    color: #a54134;
+}
+
+body.simple-honey-edit-open {
+    overflow: hidden;
+}
+
+
+@media
+(max-width: 680px) {
+
+    .simple-honey-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .simple-honey-edit-grid label.wide {
+        grid-column: auto;
+    }
+}

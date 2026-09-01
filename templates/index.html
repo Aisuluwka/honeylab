@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HoneyLab — цифровой паспорт мёда</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+<header class="hero">
+
+    <div class="honeycomb honeycomb-one"></div>
+    <div class="honeycomb honeycomb-two"></div>
+
+    <div class="hero-inner">
+
+        <div class="hero-copy">
+
+            <div class="brand-row">
+                <div class="bee-logo">
+                    🐝
+                </div>
+
+                <div>
+                    <div class="brand">HoneyLab</div>
+                    <div class="brand-subtitle">
+                        Digital Melissopalynology Platform
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-badge">
+                🍯 Научный цифровой паспорт мёда
+            </div>
+
+            <h1>
+                Пыльцевой след
+                <span>каждого образца</span>
+            </h1>
+
+            <p class="hero-text">
+                Хранение микрофотографий, палинологических результатов,
+                лабораторных характеристик и географической привязки
+                исследованных образцов мёда в одной системе.
+            </p>
+
+            <div class="hero-actions">
+
+                <button
+                    onclick="scrollToMap()"
+                    class="primary-btn"
+                >
+                    🗺 Открыть карту
+                </button>
+
+                <button
+                    onclick="scrollToSamples()"
+                    class="secondary-btn"
+                >
+                    🍯 Улей образцов
+                </button>
+
+            </div>
+
+            <div class="hero-mini-stats">
+
+                <div>
+                    <strong id="heroSampleCount">0</strong>
+                    <span>образцов</span>
+                </div>
+
+                <div>
+                    <strong id="heroPhotoCount">0</strong>
+                    <span>микрофотографий</span>
+                </div>
+
+                <div>
+                    <strong id="heroMappedCount">0</strong>
+                    <span>точек на карте</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="central-honeycomb">
+
+                <div class="central-hex">
+
+                    <div class="bee-big">🐝</div>
+
+                    <div class="central-title">
+                        HoneyLab
+                    </div>
+
+                    <div class="central-subtitle">
+                        Пыльца • Мёд • Карта
+                    </div>
+
+                </div>
+
+                <div class="float-hex float-one">
+                    🔬
+                    <span>Микроскопия</span>
+                </div>
+
+                <div class="float-hex float-two">
+                    🌼
+                    <span>Пыльца</span>
+                </div>
+
+                <div class="float-hex float-three">
+                    📍
+                    <span>География</span>
+                </div>
+
+                <div class="float-hex float-four">
+                    📊
+                    <span>Аналитика</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+
+<main>
+
+    <section class="stats-section">
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">🍯</div>
+                <div id="sampleCount" class="stat-number">0</div>
+                <div class="stat-label">
+                    исследованных образцов
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🔬</div>
+                <div id="photoCount" class="stat-number">0</div>
+                <div class="stat-label">
+                    микрофотографий
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌼</div>
+                <div id="taxonCount" class="stat-number">0</div>
+                <div class="stat-label">
+                    выделенных морфотипов
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📍</div>
+                <div id="mappedCount" class="stat-number">0</div>
+                <div class="stat-label">
+                    образцов с координатами
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="mapSection" class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="eyebrow">
+                    🐝 КАРТА ПЧЕЛИНОГО МАРШРУТА
+                </span>
+
+                <h2>
+                    Карта пасек и образцов
+                </h2>
+            </div>
+
+            <p>
+                Каждая точка на карте соответствует исследованному
+                образцу с подтверждённой географической привязкой.
+                Если точные координаты отсутствуют, HoneyLab не создаёт
+                ложную точку.
+            </p>
+
+        </div>
+
+
+        <div class="map-layout">
+
+            <aside class="map-sidebar">
+
+                <div class="sidebar-title">
+                    🍯 Фильтр образцов
+                </div>
+
+                <label>
+                    Поиск
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Например: Уржар"
+                    >
+                </label>
+
+                <label>
+                    Пыльцевой результат
+                    <select id="resultFilter">
+                        <option value="all">
+                            Все результаты
+                        </option>
+
+                        <option value="robinia">
+                            Robinia pseudoacacia-type
+                        </option>
+
+                        <option value="asteraceae">
+                            Asteraceae-like
+                        </option>
+
+                        <option value="b1">
+                            Morphotype B1
+                        </option>
+
+                        <option value="unresolved">
+                            Неопределённые
+                        </option>
+                    </select>
+                </label>
+
+                <button
+                    id="searchMapButton"
+                    class="map-search-btn"
+                >
+                    🔎 Найти на карте
+                </button>
+
+                <button
+                    id="resetFilters"
+                    class="filter-reset"
+                >
+                    Очистить фильтр
+                </button>
+
+                <div
+                    id="mapSearchMessage"
+                    class="map-search-message"
+                ></div>
+
+                <div class="bee-divider">
+                    <span>🐝</span>
+                </div>
+
+                <div class="map-note">
+                    <strong>
+                        Научная точность
+                    </strong>
+
+                    <p>
+                        Маркер отображает место отбора или документированное
+                        место происхождения образца. Он не является
+                        автоматическим доказательством географического
+                        происхождения мёда.
+                    </p>
+                </div>
+
+            </aside>
+
+            <div id="map"></div>
+
+        </div>
+
+    </section>
+
+
+    <section id="samplesSection" class="section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="eyebrow">
+                    🍯 УЛЕЙ ОБРАЗЦОВ
+                </span>
+
+                <h2>
+                    Цифровые паспорта мёда
+                </h2>
+            </div>
+
+            <p>
+                Каждый образец хранит собственный пыльцевой след:
+                микрофотографии, результат определения,
+                уровень уверенности и лабораторные данные.
+            </p>
+
+        </div>
+
+        <div id="samplesGrid" class="samples-grid"></div>
+
+    </section>
+
+
+    <section class="section pollen-section">
+
+        <div class="pollen-panel">
+
+            <div class="pollen-icon">
+                🌼
+            </div>
+
+            <div>
+
+                <span class="eyebrow">
+                    ПЫЛЬЦЕВОЙ СЛЕД
+                </span>
+
+                <h2>
+                    Микроскопия как часть цифрового паспорта
+                </h2>
+
+                <p>
+                    HoneyLab сохраняет исходную микрофотографию,
+                    название файла, описание наблюдаемого объекта,
+                    палинологическое заключение и степень уверенности
+                    определения.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section methodology">
+
+        <div class="method-card">
+
+            <div class="method-bee">🐝</div>
+
+            <span class="eyebrow">
+                ПРИНЦИП HONEYLAB
+            </span>
+
+            <h2>
+                Не угадываем таксон
+            </h2>
+
+            <p>
+                Если диагностических признаков недостаточно,
+                система сохраняет объект как неопределённый морфотип
+                или пыльцеподобную структуру. Такой подход позволяет
+                отделять наблюдение от интерпретации.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div id="sampleModal" class="modal">
+
+    <div
+        class="modal-backdrop"
+        onclick="closeModal()"
+    ></div>
+
+    <div class="modal-panel">
+
+        <button
+            class="modal-close"
+            onclick="closeModal()"
+        >
+            ×
+        </button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="footer-brand">
+        <div class="footer-bee">🐝</div>
+
+        <div>
+            <strong>HoneyLab</strong>
+            <span>
+                Digital Melissopalynology Platform
+            </span>
+        </div>
+    </div>
+
+    <p>
+        Цифровая система документирования
+        и визуализации исследований мёда
+    </p>
+
+</footer>
+
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script
+    src="{{ url_for('static', filename='app.js') }}">
+</script>
+
+    <script src="/static/ui_modules.js"></script>
+    <script src="/static/hive_samples_link.js" defer></script>
+</body>
+</html>
+
+<!-- HoneyLab universal photo viewer -->
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='photo_viewer_fix.css') }}"
+>
+
+<script
+    src="{{ url_for('static', filename='photo_viewer_fix.js') }}"
+    defer
+></script>

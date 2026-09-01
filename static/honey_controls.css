@@ -1,0 +1,220 @@
+/* =========================================================
+   HONEYLAB — единый медовый стиль кнопок
+   ========================================================= */
+
+:root {
+    --honey-gold: #f2bd4b;
+    --honey-gold-light: #fff2bd;
+    --honey-gold-dark: #d89a21;
+
+    --honey-brown: #4a321d;
+    --honey-brown-soft: #6b4b2c;
+
+    --honey-cream: #fffaf0;
+    --honey-border: #e4bf69;
+
+    --honey-danger-bg: #fff0d7;
+    --honey-danger: #8c3f28;
+}
+
+
+/* Основные кнопки интерфейса */
+
+.open-sample,
+.honey-edit-btn,
+.honey-delete-btn,
+.sample-edit-button,
+.sample-delete-button,
+.sample-editor-save,
+.sample-editor-cancel,
+.simple-honey-edit-actions button,
+.add-sample-button,
+#addSampleButton,
+button[type="submit"] {
+    border: 1px solid var(--honey-border);
+
+    border-radius: 12px;
+
+    padding: 10px 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd875,
+            var(--honey-gold)
+        );
+
+    color: var(--honey-brown);
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+
+    box-shadow:
+        0 4px 12px
+        rgba(137, 92, 20, .12);
+}
+
+
+.open-sample:hover,
+.honey-edit-btn:hover,
+.honey-delete-btn:hover,
+.sample-edit-button:hover,
+.sample-delete-button:hover,
+.sample-editor-save:hover,
+.sample-editor-cancel:hover,
+.simple-honey-edit-actions button:hover,
+.add-sample-button:hover,
+#addSampleButton:hover,
+button[type="submit"]:hover {
+    transform: translateY(-1px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe39a,
+            #f5c65c
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(137, 92, 20, .18);
+}
+
+
+/* Удаление остаётся визуально отличимым,
+   но всё равно в общей медовой палитре */
+
+.honey-delete-btn,
+.sample-delete-button {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe5be,
+            #f5c98b
+        );
+
+    color: var(--honey-danger);
+
+    border-color: #e8b772;
+}
+
+
+.honey-delete-btn:hover,
+.sample-delete-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #ffdaa2,
+            #edba70
+        );
+}
+
+
+/* =========================================================
+   Панель над фотографией
+   ========================================================= */
+
+.honey-photo-download-bar {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin:
+        5px 0 8px;
+}
+
+
+.honey-photo-download {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    min-height: 34px;
+
+    padding:
+        7px 11px;
+
+    border:
+        1px solid var(--honey-border);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--honey-gold-light),
+            var(--honey-gold)
+        );
+
+    color: var(--honey-brown);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 10px
+        rgba(133, 89, 20, .12);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.honey-photo-download:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 16px
+        rgba(133, 89, 20, .19);
+
+    color: var(--honey-brown);
+}
+
+
+.honey-photo-download::before {
+    content: "⬇";
+
+    font-size: 13px;
+}
+
+
+/* Фото после панели */
+
+.honey-download-enabled {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+@media (max-width: 650px) {
+
+    .honey-photo-download-bar {
+        justify-content: stretch;
+    }
+
+
+    .honey-photo-download {
+        width: 100%;
+    }
+}

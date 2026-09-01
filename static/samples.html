@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Образцы — HoneyLab</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/samples_page.css"
+    >
+</head>
+
+<body>
+
+<header class="samples-header">
+
+    <div class="samples-header-inner">
+
+        <a
+            href="/"
+            class="brand"
+        >
+            <span class="brand-bee">🐝</span>
+
+            <span>
+                <strong>HoneyLab</strong>
+                <small>Digital Melissopalynology Platform</small>
+            </span>
+        </a>
+
+
+        <nav class="samples-nav">
+
+            <a href="/">
+                Главная
+            </a>
+
+            <a
+                href="/static/samples.html"
+                class="active"
+            >
+                Образцы
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="samples-hero">
+
+        <div>
+
+            <span class="eyebrow">
+                HONEYLAB COLLECTION
+            </span>
+
+            <h1>
+                Улей образцов
+            </h1>
+
+            <p>
+                Единый каталог исследуемых образцов мёда,
+                фотографий и результатов микроскопического анализа.
+            </p>
+
+        </div>
+
+
+        <div class="hero-counter">
+
+            <strong id="samplesTotal">
+                0
+            </strong>
+
+            <span>
+                образцов
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <section class="samples-tools">
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+            <input
+                id="samplesSearch"
+                type="search"
+                placeholder="Найти образец, регион, ID..."
+            >
+
+        </div>
+
+
+        <select id="samplesStatusFilter">
+
+            <option value="">
+                Все статусы
+            </option>
+
+        </select>
+
+
+        <button
+            id="refreshSamples"
+            class="honey-button"
+            type="button"
+        >
+            ↻ Обновить
+        </button>
+
+    </section>
+
+
+    <div
+        id="samplesMessage"
+        class="samples-message"
+    ></div>
+
+
+    <section
+        id="samplesGrid"
+        class="samples-grid"
+    ></section>
+
+</main>
+
+
+<div
+    id="samplePassport"
+    class="passport-modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="passport-backdrop"
+        data-close-passport
+    ></div>
+
+
+    <article class="passport-dialog">
+
+        <button
+            type="button"
+            class="passport-close"
+            data-close-passport
+        >
+            ×
+        </button>
+
+
+        <div id="passportContent"></div>
+
+    </article>
+
+</div>
+
+
+<div
+    id="photoViewer"
+    class="photo-viewer"
+>
+
+    <div
+        class="photo-viewer-backdrop"
+        data-close-photo
+    ></div>
+
+
+    <div class="photo-viewer-dialog">
+
+        <button
+            type="button"
+            class="photo-viewer-close"
+            data-close-photo
+        >
+            ×
+        </button>
+
+
+        <a
+            id="photoViewerDownload"
+            class="photo-download"
+            href="#"
+            download
+        >
+            ⬇ Скачать фото
+        </a>
+
+
+        <img
+            id="photoViewerImage"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+</div>
+
+
+<script src="/static/samples_page.js"></script>
+
+</body>
+</html>
